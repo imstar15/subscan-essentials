@@ -1,0 +1,110 @@
+{
+  "ProjectIndex": "u32",
+  "ProjectOf": "Project",
+  "RoundIndex": "u32",
+  "RoundOf": "Round",
+  "Round": {
+    "type": "struct",
+    "type_mapping": [
+      [
+        "start",
+        "BlockNumber"
+      ],
+      [
+        "end",
+        "BlockNumber"
+      ],
+      [
+        "matching_fund",
+        "Balance"
+      ],
+      [
+        "grants",
+        "Vec<Grant>"
+      ],
+      [
+        "is_canceled",
+        "bool"
+      ],
+      [
+        "is_finalized",
+        "bool"
+      ]
+    ]
+  },
+  "Grant": {
+    "type": "struct",
+    "type_mapping": [
+      [
+        "project_index",
+        "ProjectIndex"
+      ],
+      [
+        "contributions",
+        "Vec<Contribution>"
+      ],
+      [
+        "is_approved",
+        "bool"
+      ],
+      [
+        "is_canceled",
+        "Vec<Grant>"
+      ],
+      [
+        "is_withdrawn",
+        "bool"
+      ],
+      [
+        "withdrawal_expiration",
+        "BlockNumber"
+      ],
+      [
+        "matching_fund",
+        "Balance"
+      ]
+    ]
+  },
+  "Contribution": {
+    "type": "struct",
+    "type_mapping": [
+      [
+        "account_id",
+        "AccountId"
+      ],
+      [
+        "value",
+        "Vec<Balance>"
+      ]
+    ]
+  },
+  "Project": {
+    "type": "struct",
+    "type_mapping": [
+      [
+        "name",
+        "Vec<u8>"
+      ],
+      [
+        "logo",
+        "Vec<u8>"
+      ],
+      [
+        "description",
+        "Vec<u8>"
+      ],
+      [
+        "website",
+        "Vec<u8>"
+      ],
+      [
+        "owner",
+        "AccountId"
+      ],
+      [
+        "create_block_number",
+        "BlockNumber"
+      ]
+    ]
+  }
+}
